@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Wahrsagekugel extends JFrame {
 
@@ -52,7 +53,12 @@ public class Wahrsagekugel extends JFrame {
         button.setBounds(250, 275, 110, 70);
         button.setForeground(Color.BLACK);
         button.setBackground(Color.BLUE);
-
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                ausgabe.setText(aufgabenListe());
+            }
+        });
         panel.add(button);
 
 
@@ -65,8 +71,6 @@ public class Wahrsagekugel extends JFrame {
 
         panel.add(ausgabe);
 
-
-
         add(panel);
 
         setPreferredSize(new Dimension(400, 400));
@@ -78,6 +82,28 @@ public class Wahrsagekugel extends JFrame {
 
 
 
+
+    }
+
+    public String aufgabenListe() {
+
+        Random rnd = new Random();
+        int zufall;
+
+        List<String> variations = new ArrayList<>();
+
+        variations.add("Gold farmen in der Methode deiner Wahl");
+        variations.add("Ausloggen!!!");
+        variations.add("Gebiete erkunden.");
+        variations.add("Erfolge sammeln.");
+        variations.add("Kräuter farmen");
+        variations.add("Leder farmen");
+        variations.add("Dungeons grinden");
+        variations.add("In einer Hauptstadt deiner Wahl chillen");
+
+        zufall = rnd.nextInt(variations.size());
+
+        return variations.get(zufall);
 
     }
 
