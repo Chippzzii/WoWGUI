@@ -20,11 +20,8 @@ public class Wahrsagekugel extends JFrame {
     private JLabel vorschlag;
 
     public static void main(String[] args) {
-
         new Wahrsagekugel();
-
     }
-
 
     public Wahrsagekugel() {
         super("Wahrsagekugel");
@@ -35,21 +32,16 @@ public class Wahrsagekugel extends JFrame {
                 super.paintComponent(g);
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
                 try {
                     Image background = ImageIO.read(new File("C:\\GitHub\\WoWGUI\\WowGUI\\src\\main\\java\\de\\wow\\wowgui\\hintergrundTest.png"));
                     g2d.drawImage(background, 0, 0, null);
-
                 } catch (IOException ex) {
                     ex.printStackTrace();
                 }
-
-
             }
         };
 
         panel.setLayout(null);
-
 
         vorschlag = new JLabel();
         vorschlag.setBounds(335,342,75,30);
@@ -60,8 +52,6 @@ public class Wahrsagekugel extends JFrame {
 
 
         button = new RunderButton("Drück mich!!!");
-
-
         try{
             button.setBounds(320, 325, 110, 70);
             Image ima = ImageIO.read(new File("C:\\GitHub\\WoWGUI\\WowGUI\\src\\main\\java\\de\\wow\\wowgui\\buttontest.png"));
@@ -72,16 +62,11 @@ public class Wahrsagekugel extends JFrame {
             g2d.setClip(shape);
             g2d.drawImage(ima, 0,0,null);
             g2d.dispose();
-
             Icon bgIcon = new ImageIcon(mI);
             button.setIcon(bgIcon);
-
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-
-
-
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -126,6 +111,8 @@ public class Wahrsagekugel extends JFrame {
         variations.add("Dungeons grinden");
         variations.add("In einer Hauptstadt deiner Wahl chillen.");
         variations.add("Ruf einer Fraktion deiner Wahl farmen.");
+        variations.add("Neuen Char Leveln.");
+
 
 
         zufall = rnd.nextInt(variations.size());
