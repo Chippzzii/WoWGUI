@@ -40,7 +40,6 @@ public class Wahrsagekugel extends JFrame {
                 }
             }
         };
-
         panel.setLayout(null);
 
         vorschlag = new JLabel();
@@ -49,7 +48,6 @@ public class Wahrsagekugel extends JFrame {
         vorschlag.setForeground(Color.WHITE);
         vorschlag.setOpaque(false);
         panel.add(vorschlag);
-
 
         button = new RunderButton("Drück mich!!!");
         try{
@@ -75,17 +73,14 @@ public class Wahrsagekugel extends JFrame {
         });
         panel.add(button);
 
-
-        ausgabe = new JLabel();
-        ausgabe.setBounds(80, 30, 300, 30);
+        ausgabe = new JLabel("", SwingConstants.CENTER);
+        ausgabe.setBounds(40, 30, 400, 30);
         ausgabe.setForeground(Color.WHITE);
-        ausgabe.setFont(ausgabe.getFont().deriveFont(50, 15));
-        ausgabe.setHorizontalTextPosition(SwingConstants.CENTER);
+        ausgabe.setFont(ausgabe.getFont().deriveFont(40, 16));
 
         panel.add(ausgabe);
 
         add(panel);
-
         setPreferredSize(new Dimension(500, 500));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
@@ -96,12 +91,9 @@ public class Wahrsagekugel extends JFrame {
     }
 
     public String aufgabenListe() {
-
         Random rnd = new Random();
         int zufall;
-
         List<String> variations = new ArrayList<>();
-
         variations.add("Gold farmen in der Methode deiner Wahl");
         variations.add("Ausloggen!!!");
         variations.add("Gebiete erkunden.");
@@ -112,14 +104,15 @@ public class Wahrsagekugel extends JFrame {
         variations.add("In einer Hauptstadt deiner Wahl chillen.");
         variations.add("Ruf einer Fraktion deiner Wahl farmen.");
         variations.add("Neuen Char Leveln.");
+        variations.add("Role Play in Sturmwind");
+        variations.add("PVP als Healer");
+        variations.add("Mit unsichtbarkeitstränken nach Orgrimmar reinlaufen.");
+
 
 
 
         zufall = rnd.nextInt(variations.size());
 
         return variations.get(zufall);
-
     }
-
-
 }
