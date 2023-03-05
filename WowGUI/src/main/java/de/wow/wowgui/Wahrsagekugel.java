@@ -76,7 +76,7 @@ public class Wahrsagekugel extends JFrame {
         ausgabe = new JLabel("", SwingConstants.CENTER);
         ausgabe.setBounds(40, 30, 400, 30);
         ausgabe.setForeground(Color.WHITE);
-        ausgabe.setFont(ausgabe.getFont().deriveFont(40, 16));
+        ausgabe.setFont(ausgabe.getFont().deriveFont(Font.BOLD, 16));
 
         panel.add(ausgabe);
 
@@ -106,10 +106,12 @@ public class Wahrsagekugel extends JFrame {
         variations.add("Neuen Char Leveln.");
         variations.add("Role Play in Sturmwind");
         variations.add("PVP als Healer");
-        variations.add("Mit unsichtbarkeitstränken nach Orgrimmar reinlaufen.");
-
-
-
+        variations.add("Mit unsichtbarkeitstränken nach Orgrimmar.");
+        variations.add("Aktuellen Charakter löschen.");
+        variations.add("Was anderes zocken.");
+        variations.add("Angeln skillen.");
+        variations.add("Angeln.");
+        variations.add("Berufe verlernen und neue Berufe lernen.");
 
         zufall = rnd.nextInt(variations.size());
 
