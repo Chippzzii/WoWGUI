@@ -48,12 +48,11 @@ public class Wahrsagekugel extends JFrame {
             }
         };
 
-        panel.setBounds(0, 0, im.getIconWidth(), im.getIconHeight());
         panel.setLayout(null);
 
 
         vorschlag = new JLabel();
-        vorschlag.setBounds(268,293,75,30);
+        vorschlag.setBounds(335,342,75,30);
         vorschlag.setText("Drück mich!!!");
         vorschlag.setForeground(Color.WHITE);
         vorschlag.setOpaque(false);
@@ -64,7 +63,7 @@ public class Wahrsagekugel extends JFrame {
 
 
         try{
-            button.setBounds(250, 275, 110, 70);
+            button.setBounds(320, 325, 110, 70);
             Image ima = ImageIO.read(new File("C:\\GitHub\\WoWGUI\\WowGUI\\src\\main\\java\\de\\wow\\wowgui\\buttontest.png"));
 
             Shape shape = new Ellipse2D.Float(0,0, button.getWidth(), button.getHeight());
@@ -93,16 +92,16 @@ public class Wahrsagekugel extends JFrame {
 
 
         ausgabe = new JLabel();
-        ausgabe.setBounds(80, 30, 250, 30);
+        ausgabe.setBounds(80, 30, 300, 30);
         ausgabe.setForeground(Color.WHITE);
-        ausgabe.setBackground(Color.white);
+        ausgabe.setFont(ausgabe.getFont().deriveFont(50, 15));
         ausgabe.setHorizontalTextPosition(SwingConstants.CENTER);
 
         panel.add(ausgabe);
 
         add(panel);
 
-        setPreferredSize(new Dimension(400, 400));
+        setPreferredSize(new Dimension(500, 500));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         pack();
@@ -127,6 +126,7 @@ public class Wahrsagekugel extends JFrame {
         variations.add("Dungeons grinden");
         variations.add("In einer Hauptstadt deiner Wahl chillen.");
         variations.add("Ruf einer Fraktion deiner Wahl farmen.");
+
 
         zufall = rnd.nextInt(variations.size());
 
