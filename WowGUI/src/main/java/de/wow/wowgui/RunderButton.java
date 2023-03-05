@@ -22,7 +22,7 @@ public class RunderButton extends JButton {
         } else {
             g.setColor(getBackground());
         }
-//        g.fillOval(0, 0, getSize().width, getSize().height);
+
 
         Graphics2D g2d = (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);

@@ -52,6 +52,14 @@ public class Wahrsagekugel extends JFrame {
         panel.setLayout(null);
 
 
+        vorschlag = new JLabel();
+        vorschlag.setBounds(268,293,75,30);
+        vorschlag.setText("Drück mich!!!");
+        vorschlag.setForeground(Color.WHITE);
+        vorschlag.setOpaque(false);
+        panel.add(vorschlag);
+
+
         button = new RunderButton("Drück mich!!!");
 
 
