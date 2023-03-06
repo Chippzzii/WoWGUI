@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Wahrsagekugel extends JFrame {
 
-    private RunderButton button;
+    public RunderButton button;
     private JLabel ausgabe;
     private JLabel vorschlag;
 
