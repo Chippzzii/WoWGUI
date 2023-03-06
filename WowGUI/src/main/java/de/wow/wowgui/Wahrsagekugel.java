@@ -7,9 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -34,7 +32,7 @@ public class Wahrsagekugel extends JFrame {
                 Graphics2D g2d = (Graphics2D) g;
                 g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 try {
-                    Image background = ImageIO.read(new File("src/main/java/de/wow/wowgui/hintergrundTest.png"));
+                    Image background = ImageIO.read(getClass().getResource("/hintergrundTest.png"));
                     g2d.drawImage(background, 0, 0, null);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
@@ -54,7 +52,7 @@ public class Wahrsagekugel extends JFrame {
         button = new RunderButton("Drück mich!!!");
         button.setBounds(320, 325, 110, 70);
         try {
-            Image ima = ImageIO.read(new File("src/main/java/de/wow/wowgui/buttontest.png"));
+            Image ima = ImageIO.read(getClass().getResource("/buttontest.png"));
             Shape shape = new Ellipse2D.Float(0, 0, button.getWidth(), button.getHeight());
             BufferedImage mI = new BufferedImage(button.getWidth(), button.getHeight(), BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2d = mI.createGraphics();
