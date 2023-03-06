@@ -9,6 +9,7 @@ import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -19,13 +20,13 @@ public class Wahrsagekugel extends JFrame {
     private JLabel ausgabe;
     private JLabel vorschlag;
 
+
     public static void main(String[] args) {
         new Wahrsagekugel();
     }
 
     public Wahrsagekugel() {
         super("Wahrsagekugel");
-        ImageIcon im = new ImageIcon("hintergrundTest.png");
         JPanel panel = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -35,35 +36,37 @@ public class Wahrsagekugel extends JFrame {
                 try {
                     Image background = ImageIO.read(new File("src/main/java/de/wow/wowgui/hintergrundTest.png"));
                     g2d.drawImage(background, 0, 0, null);
-                } catch (IOException ex) {
-                    ex.printStackTrace();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
                 }
+
             }
         };
         panel.setLayout(null);
 
         vorschlag = new JLabel();
-        vorschlag.setBounds(335,342,75,30);
+        vorschlag.setBounds(335, 342, 75, 30);
         vorschlag.setText("Drück mich!!!");
         vorschlag.setForeground(Color.WHITE);
         vorschlag.setOpaque(false);
         panel.add(vorschlag);
 
         button = new RunderButton("Drück mich!!!");
-        try{
-            button.setBounds(320, 325, 110, 70);
+        button.setBounds(320, 325, 110, 70);
+        try {
             Image ima = ImageIO.read(new File("src/main/java/de/wow/wowgui/buttontest.png"));
-
-            Shape shape = new Ellipse2D.Float(0,0, button.getWidth(), button.getHeight());
+            Shape shape = new Ellipse2D.Float(0, 0, button.getWidth(), button.getHeight());
             BufferedImage mI = new BufferedImage(button.getWidth(), button.getHeight(), BufferedImage.TYPE_INT_ARGB);
             Graphics2D g2d = mI.createGraphics();
             g2d.setClip(shape);
-            g2d.drawImage(ima, 0,0,null);
+            g2d.drawImage(ima, 0, 0, null);
             g2d.dispose();
             Icon bgIcon = new ImageIcon(mI);
             button.setIcon(bgIcon);
+
         } catch (IOException ex) {
             ex.printStackTrace();
+            System.out.println("Nö, heute werden keine Bilder geladen...");
         }
         button.addActionListener(new ActionListener() {
             @Override
