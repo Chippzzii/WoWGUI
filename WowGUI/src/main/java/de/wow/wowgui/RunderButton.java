@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class RunderButton extends JButton {
 
-    public RunderButton(String label) {
+    public RunderButton() {
         setOpaque(false);
         setContentAreaFilled(false);
     }

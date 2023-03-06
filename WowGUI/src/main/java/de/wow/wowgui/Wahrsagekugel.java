@@ -49,7 +49,7 @@ public class Wahrsagekugel extends JFrame {
         vorschlag.setOpaque(false);
         panel.add(vorschlag);
 
-        button = new RunderButton("Drück mich!!!");
+        button = new RunderButton();
         button.setBounds(320, 325, 110, 70);
         try {
             Image ima = ImageIO.read(getClass().getResource("/buttontest.png"));
